@@ -32,3 +32,4 @@ const shoppingList =[
 
 const total= shoppingList.reduce((acc,item)=>(item.price+acc),0);
 console.log(total);
+
