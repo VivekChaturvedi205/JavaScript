@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change Software</title>
+    <style>
+        .button {
+            border: 1px solid black;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Color Scheme Swticher</h1>
+        <span class="button" id="grey">Grey</span>
+        <span class="button" id="orange">Orange</span>
+        <span class="button" id="purple">Purple</span>
+        <span class="button" id="blue">blue</span>
+        <h2>
+            Trying clicking on one of the colors above
+            <span> to change the background color of this page? </span>
+        </h2>
+    </div>
+
+</body>
+
+<script>
+    const buttons= document.querySelectorAll('.button');
+    const body= document.querySelector('body');
+    buttons.forEach(function (button) {
+        button.addEventListener('click', (e)=>{
+        console.log(e.target);
+        console.log(e);
+        if (e.target.id==="grey"){
+            body.style.backgroundColor=e.target.id;
+        }
+        if (e.target.id==="orange"){
+            body.style.backgroundColor=e.target.id;
+        }
+        if (e.target.id==="purple"){
+            body.style.backgroundColor=e.target.id;
+        }
+        if (e.target.id==="blue"){
+            body.style.backgroundColor=e.target.id;
+        }
+
+    })
+    });
+</script>
+
+</html>
