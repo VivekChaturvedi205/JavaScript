@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BackGround Color Change Project</title>
+</head>
+<body>
+    <h1>Good Morning, Vivek Chaubey</h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+</body>
+<script>
+    const randomcolor= function(){
+        const hex="0123456789abcdef"
+        let color='#'
+        for (let i=0; i<6; i++){
+            color+=hex[Math.floor(Math.random()*16)];
+        }
+        return color;
+    }
+    let intervalid;
+    const startchangingcolor= function(color){
+        if (!intervalid){
+            intervalid=setInterval(changecolor,1000)
+        }
+        function changecolor(){
+            document.body.style.backgroundColor=randomcolor();
+        }
+    }
+
+    const endchangingcolor= function(color){
+        clearInterval(intervalid);
+        intervalid=null;
+    }
+
+    document.querySelector('#start').addEventListener('click', startchangingcolor)
+    document.querySelector('#stop').addEventListener('click', endchangingcolor)
+</script>
+</html>
