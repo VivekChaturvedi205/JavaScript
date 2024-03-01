@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML-HttpRequest</title>
+</head>
+<body>
+    <div id="image">
+        <!-- <img src="" alt="hiteshChaudhary" >
+        <span id="titlename"></span> -->
+    </div>
+</body>
+<script>
+    const divtarget=document.querySelector('#image')
+    const xhr=new XMLHttpRequest()
+    xhr.open('GET','https://api.github.com/users/hiteshchoudhary')
+    xhr.onreadystatechange= function(){
+        console.log(xhr.readyState);
+        if (xhr.readyState===4){
+            const data=JSON.parse(xhr.responseText)
+            console.log(data)
+            divtarget.innerHTML=` <img src="${data.avatar_url}" alt=""> <span>${data.followers}</span>`
+            }
+        }
+    xhr.send();
+</script>
+</html>
